@@ -120,7 +120,7 @@ class Fwget(Qw.QDialog):
         save_path = self.save_path.text()
         ext = self.extensions.text()
         os.chdir(save_path)
-        return ['-A', ext, '-m', '-p', '-E', '-k', '-K', '-np', url]
+        return ['-A', ext, '-m', '-R "index.html*"', '-c', '-p', '-E', '-k', '-K', '-np', url]
 
     def update_web(self):
         text = self.url.text()
